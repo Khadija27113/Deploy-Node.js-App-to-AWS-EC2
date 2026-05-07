@@ -30,6 +30,11 @@ app.get('/health', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Task Manager API is running 🚀' });
+});
+
+
 // Get all tasks (Sorted: Uncompleted first, then by newest)
 app.get('/api/tasks', async (req, res) => {
   try {
@@ -81,3 +86,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Backend running on port ${PORT}`);
 });
+
